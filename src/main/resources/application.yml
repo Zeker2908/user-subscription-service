@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: user-subscription-service
+  profiles:
+    active: dev #SPRING_PROFILES_ACTIVE

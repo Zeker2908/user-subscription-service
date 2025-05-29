@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-1
+      author: Leonid
+      changes:
+        - createIndex:
+            tableName: subscriptions
+            indexName: idx_subscription_end_date
+            columns:
+              - column:
+                  name: end_date
+
+  - changeSet:
+      id: 002-2
+      author: Leonid
+      changes:
+        - createIndex:
+            tableName: subscriptions
+            indexName: idx_subscription_user_status
+            columns:
+              - column:
+                  name: user_id
+              - column:
+                  name: status

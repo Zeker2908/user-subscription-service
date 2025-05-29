@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003-1
+      author: Leonid
+      changes:
+        - addUniqueConstraint:
+            tableName: users
+            columnNames: email
+            constraintName: users_email_key
+
+  - changeSet:
+      id: 003-2
+      author: Leonid
+      changes:
+        - addUniqueConstraint:
+            tableName: subscriptions
+            columnNames: user_id, service_type
+            constraintName: subscriptions_user_id_service_type_key
+
+  - changeSet:
+      id: 003-3
+      author: Leonid
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: subscriptions
+            baseColumnNames: user_id
+            constraintName: fk_subscriptions_user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            onDelete: NO ACTION
